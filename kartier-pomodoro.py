@@ -75,13 +75,11 @@ class PomodoroTimer:
         self.remaining_time = self.break_duration * 60
         self.update_timer("Break Time")
 
-    def update_timer(self, label_text):
-        """Updates the timer and countdown display."""
+    def update_timer(self, label_text)
         self.timer_label.config(text=f"{label_text}")
         self.countdown()
 
     def countdown(self):
-        """Performs the countdown."""
         if self.remaining_time > 0 and self.is_running:
             mins, secs = divmod(self.remaining_time, 60)
             self.timer_label.config(text=f"{mins:02}:{secs:02}")
@@ -90,8 +88,7 @@ class PomodoroTimer:
         else:
             self.timer_ended()
 
-    def timer_ended(self):
-        """Handles end of work or break session."""
+    def timer_ended(self)
         if self.current_session <= self.sessions:
             if "Work" in self.timer_label.cget("text"):
               # work session ended
